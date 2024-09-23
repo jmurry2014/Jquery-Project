@@ -1,0 +1,235 @@
+/* Mobile first approach */
+* {
+    /* Default styles for mobile */
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+
+body{
+    background-color: #F6F6F6;
+    min-height: 100vh;
+}
+header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: #fff;
+    font-family: "Inter", system-ui;
+
+}
+
+p.body-style{
+    font-family: "Inter", system-ui;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #777777;
+}
+.nav-list{
+    display: none;
+}
+nav{
+    
+    display:flex ;
+    justify-content: space-between;
+    max-height: 64px;
+    padding: 10px 20px;
+}
+nav li{
+    list-style: none;
+    font-family: "Inter", system-ui;
+    font-weight: 500;
+}
+nav li a{
+    text-decoration: none;
+    color: #001D5D;
+    
+}
+
+
+.sidebar{
+    padding-top: 20px;
+    padding-left: 20px;
+    position: fixed;
+    top: 0;
+    right:0 ;
+    height: 100vh;
+    min-width: 350px;
+    z-index: 999;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1) ;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+  margin-bottom: 20px; 
+}
+.sidebar a {
+    display: block; /* Ensure the anchor tag takes up the full width of the list item */
+    width: 100%;
+    padding: 10px 0; /* Add padding for better spacing */
+    text-decoration: none;
+    color: #001D5D;
+    font-weight: 500;
+    font-family: "Inter", system-ui;
+}
+
+.sidebar img.nav-img {
+    margin-bottom: 20px; /* Add some space below the logo image */
+}
+
+
+
+.primary-button{
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+    min-width: 100px;
+    max-width: 168px;
+    font-family: "Inter", system-ui;
+    color:#42A418;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: #D9F0D0;
+}
+.primary-button:hover{
+    background-color: #42A418;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1199px) { /* -------- THIS IS ONLY BEING USED TO EFFECTIVELY HIDE MY NAVIGATION BUTTON, RAN INTO ISSUE WHERE THE BUTTON WAS HIDING AT ALL BREAKPOINTS DUE TO THE BUTTON STYLE HAVING THE DISPLAY BLOCK VALUE    ---------*/
+    .hideOnMobile{
+        display: none ;
+    }
+} 
+
+
+
+
+
+
+
+/* Tablets */
+@media (min-width: 996px) {
+  
+    
+    .hideOnTablet{
+        display: none;
+    }
+
+
+  
+}
+
+
+
+/* Large Desktops */
+@media (min-width: 1200px) {
+ 
+
+
+
+        /* Styles for large desktops */
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+        .nav-img{
+            margin-right: 20px;
+        }
+        
+        .nav-list {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            gap: 80px;
+            margin: 0;
+            list-style: none; 
+        }
+        
+        .nav-list li {
+            display: flex;
+            align-items: center; /* Center image and text vertically */
+            gap: 8px; 
+            color:#001D5D;
+            font-size: 1rem;
+            
+        }
+        .nav-list li::before{
+            filter: invert(9%) sepia(38%) saturate(6771%) hue-rotate(213deg) brightness(93%) contrast(108%); /*Found this filter property to be the best way to change list-style-type icons based off how my html is set   */
+        
+        }
+        
+        .nav-list .home::before {
+            content: url(Icons/Nav-Icons/Home.svg);
+            display: inline-block;
+        }
+        
+        .nav-list .records::before {
+            content: url(Icons/Nav-Icons/Record.svg);
+            display: inline-block;
+        }
+        
+        .nav-list .music::before {
+            content: url(Icons/Nav-Icons/Music\ Note.svg);
+            display: inline-block;
+        }
+        
+        .nav-list .artists::before {
+            content: url(Icons/Nav-Icons/People.svg);
+            display: inline-block;
+        }
+        
+        .nav-list .concerts::before {
+            content: url(Icons/Nav-Icons/Calendar.svg);
+            display: inline-block;
+        }
+        
+       
+ 
+    
+    .hideOnDesk{
+        display:none;
+    }
+  
+}
+
+/* Extra Large Desktops */
+@media (min-width: 1440px) {
+    
+
+  
+
+    
+    
+
+    
+}
