@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 /* Mobile first approach */
 * {
     /* Default styles for mobile */
@@ -99,12 +106,92 @@ nav li a{
     font-size: 1rem;
     background-color: #D9F0D0;
 }
-.primary-button:hover{
-    background-color: #42A418;
+
+
+
+/* -----------------------------START OF HERO SECTION------------------------------*/
+
+
+
+
+.hero-section {   /*using the ::before pseudo-element because i want the image to display before any other content in this section  */
+    content: "";   /* Acts as a container for the background image*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(Images/DJ-small.png);
+    background-size: cover;
+    background-position: 30% ;
+    background-repeat: no-repeat;
+    z-index: -1; /* Place the image behind any other content */
+}
+
+.hero-section {
+    display: grid;
+    grid-auto-flow: row;
+    position: relative;
+    width: 100%;
+    height: 720px; 
+    overflow: hidden; 
     color: white;
+    font-family: "Inter", system-ui;
+    padding: 0 20px;
+    gap: 24px;
+}
+
+.hero-section .hero-text{
+display: grid;  /*Added this line so i could access the gap property within the hero-text Container*/
+width: auto;
+min-width: 300px;
+max-width: 567px;
+letter-spacing: 0;
+align-self: end;
+gap: 24px;
+
+}
+ .hero-text h1{
+    font-size: 4rem;
+    line-height: 72px;
+ }
+
+ .hero-text p{
+font-weight: 400;
+font-size: 1rem;
+line-height: 24px;
+}
+
+.play-button{
+    display: flex;
+    min-width: 300px;
+    max-width: 567px;
+    max-height: 60px;
+    overflow: none;
+    align-items: center;
+height:60px;
+gap: 24px;
+font-weight: bold;
+}
+.hero-button-container{
+    display: flex;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 50%;
+    justify-content: center;
+
+}
+.hero-button{
+    width: 24px;
+align-items: center;
 }
 
 
+
+
+
+/* -----------------------------END OF HERO SECTION------------------------------*/
 
 
 
@@ -137,8 +224,17 @@ nav li a{
 
 /* Tablets */
 @media (min-width: 996px) {
-  
+    .hero-section::before {   /*using the ::before pseudo-element because i want the image to display before any other content in this section  */
+        background-image: url(Images/DJ-medium.png);
+    }
     
+    .hero-section{
+        padding:  150px;
+    }
+    .hero-section h1{
+        letter-spacing: 4px;
+    
+    }
     .hideOnTablet{
         display: none;
     }
@@ -152,7 +248,9 @@ nav li a{
 /* Large Desktops */
 @media (min-width: 1200px) {
  
-
+    .hero-section::before {   /*using the ::before pseudo-element because i want the image to display before any other content in this section  */
+        background-image: url(Images/DJ-large.png);
+    }
 
 
         /* Styles for large desktops */
@@ -225,7 +323,9 @@ nav li a{
 /* Extra Large Desktops */
 @media (min-width: 1440px) {
     
-
+    .hero-section::before {   /*using the ::before pseudo-element because i want the image to display before any other content in this section  */
+        background-image: url(Images/DJ-large.png);
+    }
   
 
     
